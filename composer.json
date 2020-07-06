@@ -24,6 +24,9 @@
         "intervention/image": "~2.3",
         "laravel/browser-kit-testing": "^6.0"
     },
+    "replace": {
+        "encore/laravel-admin": "1.*"
+    },
     "autoload": {
         "psr-4": {
             "Encore\\Admin\\": "src/"
