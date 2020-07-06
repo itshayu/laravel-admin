@@ -35,6 +35,8 @@ class Tools implements Renderable
      */
     protected $prepends;
 
+    protected $listQuery = [];
+
     /**
      * Create a new Tools instance.
      *
@@ -123,6 +125,11 @@ class Tools implements Renderable
         return $this;
     }
 
+    public function setListPath(array $query) : void
+    {
+        $this->listQuery = $query;
+    }
+
     /**
      * Get request path for resource list.
      *
@@ -130,7 +137,12 @@ class Tools implements Renderable
      */
     protected function getListPath()
     {
-        return $this->form->getResource();
+        $queryString = http_build_query($this->listQuery);
+
+        return sprintf('%s%s',
+            $this->form->getResource(),
+            $queryString ? ('?'.$queryString) : ''
+        );
     }
 
     /**
