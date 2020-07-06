@@ -19,6 +19,6 @@ class Edit extends RowAction
      */
     public function href()
     {
-        return "{$this->getResource()}/{$this->getKey()}/edit";
+        return "{$this->getResource()}/{$this->getKey()}/edit?" . http_build_query(request()->toArray());
     }
 }
