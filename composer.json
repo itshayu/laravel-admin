@@ -1,5 +1,5 @@
 {
-    "name": "itshayu/laravel-admin",
+    "name": "itshayu/laravel-admin-v1",
     "description": "laravel admin",
     "type": "library",
     "keywords": ["laravel", "admin", "grid", "form"],
